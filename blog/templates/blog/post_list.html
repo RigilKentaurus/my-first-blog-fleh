@@ -6,15 +6,12 @@
 		<div>
 			<h1><a href="">HMWSR</a></h1>
 		</div>
-		<div>
-			<p>published: 14.06.2183, 12:14</p>
-			<h2><a href="">VII</a></h2>
-			<p>The first available of the Spectre sniper rifles. Its accuracy and damage are matched by none up to this point in the game.</p>
-		</div>
-		<div>
-			<p>published: 14.06.2183, 12:14</p>
-			<h2><a href="">X</a></h2>
-			<p>The fully evolved variant of the HMWSR VII. Its all-around excellency as a sniper rifle is matched by few others in the game at all.</p>
-		</div>
+		{% for post in posts %}
+			<div>
+				<p>publicerade: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaks }}</p>
+			</div>
+		{% endfor %}
 	</body>
 </html>
